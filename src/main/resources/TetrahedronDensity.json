@@ -1,0 +1,82 @@
+{
+  "Id": "Tetrahedron.Density",
+  "Title": "Tetrahedron Density",
+  "Color": "Purple",
+  "Description" : "Generate a Tetrahedron density. You can use a Scale vector to stretch and compress the Tetrahedron in different directions. You can spin it by giving it a new Y axis and a spin angle (in degrees).",
+  "Content": [
+    {
+      "Id" : "ExportAs",
+      "Type" : "SmallString",
+      "Options" : {
+        "Label" : "ExportAs",
+        "Default" : "",
+        "Width" : 250
+      }
+    },
+    {
+      "Id": "Skip",
+      "Type": "Checkbox",
+      "Options": {
+        "Label": "Skip",
+        "Default" : false
+      }
+    },
+    {
+      "Id": "Spin",
+      "Type": "Float",
+      "Options": {
+        "Label": "Spin",
+        "Default" : 0.0,
+        "Description" : "Determines the angle in degrees by which to spin the Tetrahedron around its Y axis."
+      }
+    }
+  ],
+  "Outputs": [
+    {
+      "Id": "Curve",
+      "Type": "Curve.Connection",
+      "Color": "Orange",
+      "Label" : "Curve",
+      "Description" : "Maps the Tetrahedron's extent to a Density value."
+    },
+    {
+      "Id": "Scale",
+      "Type": "Decimal.Vector3d.Connection",
+      "Color": "Orange",
+      "Label" : "Scale",
+      "Description" : "Determines how much to stretch the Tetrahedron in each direction."
+    },
+    {
+      "Id": "NewYAxis",
+      "Type": "Decimal.Vector3d.Connection",
+      "Color": "Orange",
+      "Label" : "NewYAxis",
+      "Description" : "Let you rotate the field around its origin."
+    }
+  ],
+  "Inputs": [
+    {
+      "Id": "DensityOutput",
+      "Type": "Density.Connection",
+      "Color": "Purple"
+    }
+  ],
+  "Schema": {
+    "Type" : "Tetrahedron",
+    "ExportAs" : "ExportAs",
+    "Skip" : "Skip",
+    "Spin" : "Spin",
+    "Curve" : {
+      "Node" : "Curve.Variants",
+      "Pin" : "Curve"
+    },
+    "Scale" : {
+      "Node": "Decimal.Vector3d",
+      "Pin" : "Scale"
+    },
+    "NewYAxis" : {
+      "Node": "Decimal.Vector3d",
+      "Pin" : "NewYAxis"
+    }
+  }
+}

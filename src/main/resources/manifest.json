@@ -1,0 +1,17 @@
+{
+  "Group": "Fullavatar",
+  "Name": "Tetrahedron",
+  "Version": "0.1.0",
+  "Description": "",
+  "Authors": [
+    {
+      "Name": "Fullavatar"
+    }
+  ],
+  "Main": "com.github.fullavatar.tetrahedron.TetrahedronPlugin",
+  "ServerVersion": "0.6.0-pre.10",
+  "Dependencies": {},
+  "OptionalDependencies": {},
+  "DisabledByDefault": false,
+  "IncludesAssetPack": false
+}
